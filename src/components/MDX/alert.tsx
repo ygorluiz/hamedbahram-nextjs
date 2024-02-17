@@ -1,6 +1,12 @@
 import { InfoIcon } from 'lucide-react'
 import * as Alert from '@/components/ui/alert'
 
+/**
+ * A function that renders an Alert component with the provided props.
+ *
+ * @param {Alert.RootProps} props - the props for the Alert component
+ * @return {JSX.Element} the rendered Alert component
+ */
 export const Demo = (props: Alert.RootProps) => {
 	return (
 		<Alert.Root {...props}>
