@@ -6,22 +6,25 @@ export default async function PostsPage() {
 	const allBlogs = getBlogPosts()
 
 	return (
-		<styled.section py="24">
+		<styled.section fontSize="3xl" fontWeight="bold" py="24">
 			<Container>
 				<h1>All Posts</h1>
-				<ul>
+				<styled.ul mt="12">
 					<>
 						{allBlogs.map((post) => (
 							<>
 								<li key={post.slug}>
-									{/* <Link href={`/posts/${post.slug}`}></Link> */}
-									<div>{post.metadata.title} </div>
-									<div>{post.metadata.author}</div>
+									<Link href={`/posts/${post.slug}`}>
+										<styled.h4 fontSize="lg">{post.metadata.title}</styled.h4>
+										<styled.p fontSize="sm" color="fg.subtle">
+											{post.metadata.author}
+										</styled.p>
+									</Link>
 								</li>
 							</>
 						))}
 					</>
-				</ul>
+				</styled.ul>
 			</Container>
 		</styled.section>
 	)
