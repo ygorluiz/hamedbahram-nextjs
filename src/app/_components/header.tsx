@@ -1,7 +1,7 @@
-import { Link } from "@/components/ui/link";
-import NavLink from "@/components/ui/nav-link";
-import { css } from "@/styled-system/css";
-import NextLink from "next/link";
+import { Link } from '@/components/ui/link'
+import NavLink from '@/components/ui/nav-link'
+import { css } from '@/styled-system/css'
+import NextLink from 'next/link'
 
 export default function Header() {
 	return (
@@ -14,18 +14,21 @@ export default function Header() {
 					<li>
 						<NavLink href="/about">About</NavLink>
 					</li>
+					<li>
+						<NavLink href="/posts">Blog</NavLink>
+					</li>
 				</ul>
 			</nav>
 		</header>
-	);
+	)
 }
 const classes = {
 	header: css({
-		bg: "bg.default",
+		bg: 'bg.default',
 	}),
 	list: css({
-		display: "flex",
-		gap: "1rem",
-		p: "4",
+		display: 'flex',
+		gap: '1rem',
+		p: '4',
 	}),
-};
+}
