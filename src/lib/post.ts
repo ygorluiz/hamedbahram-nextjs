@@ -50,3 +50,7 @@ function getMDXData(dir: string) {
 export function getBlogPosts() {
 	return getMDXData(path.join(process.cwd(), 'content'))
 }
+
+export async function wait(ms: number) {
+	return new Promise(resolve => setTimeout(resolve,ms))
+}
