@@ -17,6 +17,9 @@ export default function Header() {
 					<li>
 						<NavLink href="/posts">Blog</NavLink>
 					</li>
+					<li>
+						<NavLink href="/guessbook">Guessbook</NavLink>
+					</li>
 				</ul>
 			</nav>
 		</header>
