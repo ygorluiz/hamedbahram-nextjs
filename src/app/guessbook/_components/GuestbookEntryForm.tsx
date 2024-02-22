@@ -1,17 +1,16 @@
-'use client'
+import { addEntry } from '@/app/_actions'
 import { Button, Card, FormLabel, Input } from '@/components/ui'
 import { Stack } from '@/styled-system/jsx'
 import { useRouter } from 'next/navigation'
 import { useState, useTransition } from 'react'
 
 export default function GuestbookEntryForm(props: Card.RootProps) {
-	const router = useRouter()
+	/* 	const router = useRouter()
 	const [isPending, startTransition] = useTransition()
 	const [isFetching, setIsFetching] = useState(false)
 	const isMutating = isFetching || isPending
-
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-	const handleSubmit = async (event: any) => {
+ */
+	/* 	const handleSubmit = async (event: any) => {
 		event.preventDefault()
 		const form = event.currentTarget
 		const formData = new FormData(form)
@@ -36,9 +35,9 @@ export default function GuestbookEntryForm(props: Card.RootProps) {
 		startTransition(() => {
 			router.refresh()
 		})
-	}
+	} */
 	return (
-		<form onSubmit={handleSubmit}>
+		<form action={addEntry}>
 			<Card.Root width="sm" {...props}>
 				<Card.Body pt="6">
 					<Stack gap="4">
@@ -61,8 +60,7 @@ export default function GuestbookEntryForm(props: Card.RootProps) {
 					</Stack>
 				</Card.Body>
 				<Card.Footer>
-					<Button w="full" disabled={isMutating} type="submit">
-						{' '}
+					<Button w="full" type="submit">
 						Add
 					</Button>
 				</Card.Footer>

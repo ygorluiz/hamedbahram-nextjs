@@ -9,7 +9,11 @@ export interface TodosProps {
 }
 
 async function getTodos(): Promise<TodosProps[]> {
-	const res = await fetch('https://jsonplaceholder.typicode.com/todos')
+	const res = await fetch('https://jsonplaceholder.typicode.com/todos', {
+		next: {
+			revalidate: 60,
+		},
+	})
 	if (!res.ok) throw new Error('failed to fetch todos.')
 	return res.json()
 }

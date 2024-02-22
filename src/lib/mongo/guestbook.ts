@@ -43,13 +43,14 @@ interface CreateGuestbookEntryProps {
 	name: string
 	message: string
 }
+
 export const createGuestbookEntry = async ({
 	name,
 	message,
-}: CreateGuestbookEntryProps) => {
+}: { name: string; message: string }): Promise<{ error?: string }> => {
 	try {
 		if (!guestbook) await init()
-
+		//@ts-ignore
 		return await guestbook.insertOne({ name, message, updatedAt: new Date() })
 	} catch (error) {
 		return { error: 'Failed to create entry!' }

@@ -4,13 +4,17 @@ import { css } from '@/styled-system/css'
 import { Box, Container } from '@/styled-system/jsx'
 import GuestbookEntryForm from './_components/GuestbookEntryForm'
 
+// see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config
+//export const dynamic = 'force-dynamic'
+export const revalidate = 60
+
 async function getData() {
 	const { entries, error } = await getGuestbookEntries()
 	if (!entries || error) throw new Error('Failed to fetch entries.')
 	return entries
 }
 
-export default async function () {
+export default async function Page() {
 	const entries = await getData()
 	return (
 		<Box>
